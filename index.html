@@ -377,12 +377,12 @@
 
         // No CSS animations needed - using JavaScript physics for explosion
 
-        // Trigger confetti on page load
+        // Trigger explosion on page load
         window.addEventListener('load', () => {
-            setTimeout(createConfetti, 1000);
+            setTimeout(createConfetti, 800);
         });
 
-        // Add some interactivity - click the profile image for more confetti!
+        // Add some interactivity - click the profile image for more explosions!
         document.querySelector('.profile-image').addEventListener('click', () => {
             createConfetti();
         });
@@ -398,7 +398,7 @@
                 button.style.background = '#4caf50';
                 button.style.color = '#fff';
                 
-                // Trigger celebration confetti
+                // Trigger celebration explosion
                 setTimeout(createConfetti, 200);
                 
                 // Reset form after 3 seconds
