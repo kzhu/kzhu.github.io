@@ -32,13 +32,20 @@
             z-index: 10;
         }
 
-        .moon {
+        .profile-image {
             width: 120px;
             height: 120px;
-            background: #fff;
             border-radius: 50%;
             margin: 0 auto 3rem;
-            opacity: 0.9;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+            border-color: rgba(255, 255, 255, 0.3);
         }
 
         h1 {
@@ -203,7 +210,7 @@
                 font-size: 3rem;
             }
             
-            .moon {
+            .profile-image {
                 width: 80px;
                 height: 80px;
                 margin-bottom: 2rem;
@@ -246,7 +253,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="moon"></div>
+        <img src="profile.png" alt="笨鱼" class="profile-image">
         
         <h1>笨鱼看世界</h1>
         <p class="subtitle">随笔记下用自己的眼睛看见的世界</p>
@@ -351,8 +358,8 @@
             setTimeout(createConfetti, 1000);
         });
 
-        // Add some interactivity - click the moon for more confetti!
-        document.querySelector('.moon').addEventListener('click', () => {
+        // Add some interactivity - click the profile image for more confetti!
+        document.querySelector('.profile-image').addEventListener('click', () => {
             createConfetti();
         });
 
