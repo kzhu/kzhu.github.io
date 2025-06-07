@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Coming Soon</title>
+    <title>笨鱼看世界 - 随笔记下用自己的眼睛看见的世界</title>
     <style>
         * {
             margin: 0;
@@ -12,144 +12,286 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: #000;
+            color: #fff;
+            min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
+            padding: 2rem;
+            line-height: 1.6;
         }
 
         .container {
             text-align: center;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 3rem 2rem;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-            max-width: 600px;
-            width: 90%;
+            max-width: 800px;
+            width: 100%;
             position: relative;
             z-index: 10;
         }
 
+        .moon {
+            width: 120px;
+            height: 120px;
+            background: #fff;
+            border-radius: 50%;
+            margin: 0 auto 3rem;
+            opacity: 0.9;
+        }
+
         h1 {
-            font-size: 3rem;
-            color: #333;
-            margin-bottom: 1rem;
+            font-size: 4.5rem;
             font-weight: 700;
+            color: #fff;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
         }
 
         .subtitle {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 2rem;
-            line-height: 1.6;
+            font-size: 1.25rem;
+            color: #888;
+            margin-bottom: 4rem;
+            font-weight: 400;
+        }
+
+        .coming-soon-section {
+            margin-bottom: 4rem;
         }
 
         .coming-soon {
-            font-size: 1.5rem;
-            color: #764ba2;
-            font-weight: 600;
-            margin-bottom: 2rem;
+            font-size: 1rem;
+            color: #fff;
+            font-weight: 500;
+            margin: 2rem 0;
+            position: relative;
         }
 
-        .emoji {
-            font-size: 4rem;
-            margin: 1rem 0;
-            animation: bounce 2s infinite;
+        .coming-soon::before,
+        .coming-soon::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 100px;
+            height: 1px;
+            background: #333;
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-10px);
-            }
-            60% {
-                transform: translateY(-5px);
-            }
+        .coming-soon::before {
+            left: -120px;
+        }
+
+        .coming-soon::after {
+            right: -120px;
         }
 
         .description {
-            color: #777;
-            line-height: 1.8;
-            margin-bottom: 2rem;
+            font-size: 1.125rem;
+            color: #ccc;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .email-signup {
+            margin-bottom: 4rem;
+        }
+
+        .email-signup p {
+            color: #888;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .email-form {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .email-input {
+            background: #111;
+            border: 1px solid #333;
+            color: #fff;
+            padding: 0.875rem 1.25rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            min-width: 280px;
+            transition: border-color 0.3s ease;
+        }
+
+        .email-input:focus {
+            outline: none;
+            border-color: #666;
+        }
+
+        .email-input::placeholder {
+            color: #666;
+        }
+
+        .notify-btn {
+            background: #fff;
+            color: #000;
+            border: none;
+            padding: 0.875rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .notify-btn:hover {
+            background: #e0e0e0;
+        }
+
+        .about-section {
+            margin-bottom: 3rem;
+        }
+
+        .about-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text {
+            font-size: 1rem;
+            color: #999;
+            line-height: 1.7;
+            max-width: 650px;
+            margin: 0 auto 3rem;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: 2rem;
             margin-top: 2rem;
         }
 
         .social-link {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            color: #666;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: 500;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .social-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            color: #fff;
         }
 
         .confetti {
             position: fixed;
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 8px;
             z-index: 1;
             pointer-events: none;
         }
 
         @media (max-width: 768px) {
             h1 {
-                font-size: 2rem;
+                font-size: 3rem;
             }
             
-            .container {
-                padding: 2rem 1.5rem;
+            .moon {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 2rem;
+            }
+            
+            .coming-soon::before,
+            .coming-soon::after {
+                width: 50px;
+            }
+            
+            .coming-soon::before {
+                left: -70px;
+            }
+            
+            .coming-soon::after {
+                right: -70px;
+            }
+            
+            .email-form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .email-input {
+                min-width: auto;
             }
             
             .social-links {
-                flex-direction: column;
-                align-items: center;
+                gap: 1.5rem;
             }
-            
-            .social-link {
-                width: 200px;
+        }
+
+        @media (max-width: 480px) {
+            .coming-soon::before,
+            .coming-soon::after {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="emoji">🚀</div>
-        <h1>Benyu's Blog</h1>
-        <p class="coming-soon">Coming Soon!</p>
+        <div class="moon"></div>
+        
+        <h1>笨鱼看世界</h1>
+        <p class="subtitle">随笔记下用自己的眼睛看见的世界</p>
+        
+        <div class="coming-soon-section">
+            <div class="coming-soon">Coming Soon</div>
+        </div>
+        
         <p class="description">
-            I'm working hard to bring you amazing content. Stay tuned for exciting blog posts about technology, 
-            life experiences, and everything in between. The journey is about to begin!
+            Join me on a journey through my experiences living in the West, reflections on life in 
+            China, and adventures traveling across continents and cultures.
         </p>
+        
+        <div class="email-signup">
+            <p>Be the first to know when the blog launches</p>
+            <form class="email-form">
+                <input type="email" class="email-input" placeholder="Enter your email" required>
+                <button type="submit" class="notify-btn">
+                    <span>✉️</span>
+                    Notify Me
+                </button>
+            </form>
+        </div>
+        
+        <div class="about-section">
+            <h2 class="about-title">About Benyu</h2>
+            <p class="about-text">
+                Born and raised in China, now exploring the Western world. I write about cultural contrasts, personal 
+                growth, and the beautiful complexity of human experiences across different societies. Through my 
+                writing, I hope to build bridges of understanding between East and West.
+            </p>
+        </div>
+        
         <div class="social-links">
-            <a href="#" class="social-link">Follow Updates</a>
-            <a href="#" class="social-link">Contact Me</a>
+            <a href="#" class="social-link" title="Twitter">🐦</a>
+            <a href="#" class="social-link" title="Instagram">📷</a>
+            <a href="#" class="social-link" title="LinkedIn">💼</a>
         </div>
     </div>
 
     <script>
-        // Confetti animation
+        // Elegant confetti animation for dark theme
         function createConfetti() {
-            const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57', '#ff9ff3', '#54a0ff'];
-            const confettiCount = 100;
+            const colors = ['#fff', '#ccc', '#999', '#666', '#444'];
+            const confettiCount = 60;
             
             for (let i = 0; i < confettiCount; i++) {
                 setTimeout(() => {
@@ -157,18 +299,21 @@
                     confetti.className = 'confetti';
                     confetti.style.left = Math.random() * 100 + 'vw';
                     confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                    confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
-                    confetti.style.animationDelay = Math.random() * 2 + 's';
+                    confetti.style.animationDuration = (Math.random() * 4 + 3) + 's';
+                    confetti.style.animationDelay = Math.random() * 3 + 's';
                     
-                    // Random shapes
-                    if (Math.random() > 0.5) {
+                    // Random shapes - mostly circles for elegance
+                    if (Math.random() > 0.3) {
                         confetti.style.borderRadius = '50%';
                     }
                     
-                    // Random sizes
-                    const size = Math.random() * 8 + 4;
+                    // Smaller, more subtle sizes
+                    const size = Math.random() * 6 + 3;
                     confetti.style.width = size + 'px';
                     confetti.style.height = size + 'px';
+                    
+                    // Lower opacity for subtlety
+                    confetti.style.opacity = Math.random() * 0.4 + 0.2;
                     
                     document.body.appendChild(confetti);
                     
@@ -180,8 +325,8 @@
                         if (confetti.parentNode) {
                             confetti.parentNode.removeChild(confetti);
                         }
-                    }, 5000);
-                }, i * 50);
+                    }, 8000);
+                }, i * 80);
             }
         }
 
@@ -191,10 +336,10 @@
             @keyframes fall {
                 0% {
                     transform: translateY(-100vh) rotate(0deg);
-                    opacity: 1;
+                    opacity: var(--start-opacity, 0.6);
                 }
                 100% {
-                    transform: translateY(100vh) rotate(360deg);
+                    transform: translateY(100vh) rotate(180deg);
                     opacity: 0;
                 }
             }
@@ -203,12 +348,36 @@
 
         // Trigger confetti on page load
         window.addEventListener('load', () => {
-            setTimeout(createConfetti, 500);
+            setTimeout(createConfetti, 1000);
         });
 
-        // Add some interactivity - click the rocket for more confetti!
-        document.querySelector('.emoji').addEventListener('click', () => {
+        // Add some interactivity - click the moon for more confetti!
+        document.querySelector('.moon').addEventListener('click', () => {
             createConfetti();
+        });
+
+        // Email form functionality
+        document.querySelector('.email-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const emailInput = this.querySelector('.email-input');
+            const button = this.querySelector('.notify-btn');
+            
+            if (emailInput.value) {
+                button.innerHTML = '<span>✅</span> Thank you!';
+                button.style.background = '#4caf50';
+                button.style.color = '#fff';
+                
+                // Trigger celebration confetti
+                setTimeout(createConfetti, 200);
+                
+                // Reset form after 3 seconds
+                setTimeout(() => {
+                    button.innerHTML = '<span>✉️</span> Notify Me';
+                    button.style.background = '#fff';
+                    button.style.color = '#000';
+                    emailInput.value = '';
+                }, 3000);
+            }
         });
     </script>
 </body>
